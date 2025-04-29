@@ -1,0 +1,21 @@
+{
+  "name": "ventas2025",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelrl7/Ventas2025.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/angelrl7/Ventas2025/issues"
+  },
+  "homepage": "https://github.com/angelrl7/Ventas2025#readme"
+}
