@@ -1,5 +1,12 @@
-console.log("hola mundo");
-for(let i = 1; i <= 10; i++ ){
- console.log(`5 x ${i}= ${5 * i}`);
-}
-console.log("Chau mundo")
+import express from "express";
+import { controllers } from "./controllers/controllers.js";
+
+const app = express();
+
+controllers(app);
+
+const PORT = 3000;
+
+app.listen(PORT, () => {
+    console.log(`servidor corriendo con http://localhost:${PORT}`);
+});
