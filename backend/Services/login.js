@@ -1,3 +1,6 @@
+import { InvalidCredenctialsException } from "../exception/invalid_credentials_exception";
+import { InvalidArgumentException } from "../exception/invalid_argument_exception";
+
 export class LoginService {
    static async login(credentials) {
         if(!credentials
@@ -5,20 +8,15 @@ export class LoginService {
             ||!credentials.password
             || typeof credentials.username != 'string'
             || typeof credentials.password != 'string'
-        ){
-            return{
-                error: ' credenciales invalidas.',
-            };
-        }
+        )
+            throw new InvalidArgumentException();
+        
         if (credentials.username !== 'admin'){
-            return{
-                error: ' credenciales invalidas.',
-            };
+            throw new InvalidCredenctialsException();
+        
         } 
         if (credentials.password !== '1234'){
-            return{
-                error: ' credenciales invalidas.',
-            };
+            throw new InvalidCredenctialsException();
         }
         return{
             token: 'token de acceso',

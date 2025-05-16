@@ -1,4 +1,4 @@
-import {LoginService} from '../services/login.js';
+import {LoginService} from '../Services/login.js';
 
 export function login(app){
     app.post(
