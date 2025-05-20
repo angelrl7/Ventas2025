@@ -1,7 +1,8 @@
 export class InvalidArgumentException extends Error {
     
-    constructor(message) {
+    constructor() {
         super("Argumentos invalidos");
+        
         this.StatusCode = 400;
         
     }

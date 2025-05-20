@@ -1,5 +1,5 @@
 import { InvalidCredenctialsException } from "../exception/invalid_credentials_exception";
-import { InvalidArgumentException } from "../exception/invalid_argument_exception";
+import { InvalidArgumentException } from "../exception/invalid_argument_exeception";
 
 export class LoginService {
    static async login(credentials) {
