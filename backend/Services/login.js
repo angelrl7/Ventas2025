@@ -1,8 +1,11 @@
-import { InvalidCredenctialsException } from "../exception/invalid_credentials_exception";
-import { InvalidArgumentException } from "../exception/invalid_argument_exeception";
+
+
+import { InvalidArgumentException } from "../exception/invalid_argument_exeception.js";
+import { InvalidCredenctialsException } from "../exception/invalid_credentials_exception.js";
+
 
 export class LoginService {
-   static async login(credentials) {
+      static async login(credentials) {
         if(!credentials
             ||!credentials.username
             ||!credentials.password
@@ -10,6 +13,8 @@ export class LoginService {
             || typeof credentials.password != 'string'
         )
             throw new InvalidArgumentException();
+            
+
         
         if (credentials.username !== 'admin'){
             throw new InvalidCredenctialsException();
@@ -22,5 +27,7 @@ export class LoginService {
             token: 'token de acceso',
          }
         }
-}
+     
+};
 
+  

@@ -1,6 +1,7 @@
-export class InvalidCredenciales extends Error {
+export class InvalidCredenctialsException extends Error {
     
-    constructor(message) {
+    constructor() {
+        
         super("Argumentos invalidos");
         this.StatusCode = 400;
         
