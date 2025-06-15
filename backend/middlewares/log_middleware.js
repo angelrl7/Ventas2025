@@ -6,6 +6,8 @@ export function logMiddleware(req, res, next) {
    .replace('Z', ' ');
 
    const ip = req.ip;
+
+   next();
      
    
 }

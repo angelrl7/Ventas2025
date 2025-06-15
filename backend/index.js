@@ -1,15 +1,25 @@
 import express from "express";
 import { controllers } from "./controllers/controllers.js";
-import { errorHandlerMiddleware } from "./middlewares/error_handler_middlewares.js";
+import { errorHandlerMiddleware} from "./middlewares/error_handler_middleware.js";
+import { logMiddleware } from "./middlewares/log_middleware.js";
+import { getDependency } from "./libs/dependecies.js";
+import { UserService } from "./Services/user.js"; 
+
+
 
 const app = express();
 
-app.use(express.json());
+const router = express.Router();
 
-controllers(app);
+app.use('/api', router);
+
+router.use(express.json());
+router.use(logMiddleware);
+
+controllers(router);
 
 
-app.use(errorHandlerMiddleware);
+router.use(errorHandlerMiddleware);
 
 const PORT = 3000;
 
